@@ -36,9 +36,9 @@ exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
   //1. Check if user exist && password is correct
   const user = await User.findOne({
-    where: { email: email.toLowerCase(), status: true },
+    where: { email: email.toLowerCase(), status: 'avalaible' },
   });
-  i;
+console.log('hola2')
 
   if (!user) {
     return next(new AppError('The user could not be found', 404));
